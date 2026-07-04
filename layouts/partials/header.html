@@ -1,0 +1,20 @@
+<header class="site-header">
+    <div class="header-container">
+        <a href="/" class="logo">
+            <!-- 替换为你的 logo -->
+            <span class="logo-text">Genuine Knowledge</span>
+        </a>
+        <nav class="site-nav">
+            <ul>
+                {{ range .Site.Menus.main }}
+                <li>
+                    <a href="{{ .URL }}" 
+                       class="{{ if $.IsMenuCurrent "main" . }}active{{ end }}">
+                        {{ .Name }}
+                    </a>
+                </li>
+                {{ end }}
+            </ul>
+        </nav>
+    </div>
+</header>

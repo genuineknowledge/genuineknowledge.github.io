@@ -1,0 +1,35 @@
+baseURL = "https://genuineknowledge.github.io/"
+languageCode = "zh-cn"
+title = "Genuine Knowledge"
+theme = ""
+enableRobotsTXT = true
+
+# 顶部导航菜单
+[menu]
+  [[menu.main]]
+    name = "关于我们"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "我们的产品"
+    url = "/products/"
+    weight = 2
+
+  [[menu.main]]
+    name = "新闻动态"
+    url = "/news/"
+    weight = 3
+
+  [[menu.main]]
+    name = "加入我们"
+    url = "/join-us/"
+    weight = 4
+
+# 分页配置（新闻列表用）
+[pagination]
+  pagerSize = 10
+
+# 输出格式
+[outputs]
+  home = ["HTML"]
