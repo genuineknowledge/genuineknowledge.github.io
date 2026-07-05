@@ -3,7 +3,7 @@
     <div class="container">
         <h1>{{ .Title }}</h1>
         <div class="news-list">
-            {{ range .Pages }}
+            {{ range .Pages.ByDate.Reverse }}
             <article class="news-item">
                 <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
                 <time>{{ .Date.Format "2006-01-02" }}</time>
