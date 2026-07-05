@@ -1,7 +1,6 @@
 baseURL = "https://genuineknowledge.github.io/"
 languageCode = "zh-cn"
 title = "真知人工智能"
-theme = ""
 enableRobotsTXT = true
 
 # 顶部导航菜单
