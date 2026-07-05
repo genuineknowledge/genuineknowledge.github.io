@@ -1,14 +1,13 @@
 <header class="site-header">
     <div class="header-container">
-        <a href="/" class="logo">
-            <!-- 替换为你的 logo -->
-            <span class="logo-text">Genuine Knowledge</span>
+        <a href="{{ "/" | relURL }}" class="logo">
+            <span class="logo-text">{{ .Site.Title }}</span>
         </a>
         <nav class="site-nav">
             <ul>
                 {{ range .Site.Menus.main }}
                 <li>
-                    <a href="{{ .URL }}" 
+                    <a href="{{ .URL | relURL }}" 
                        class="{{ if $.IsMenuCurrent "main" . }}active{{ end }}">
                         {{ .Name }}
                     </a>

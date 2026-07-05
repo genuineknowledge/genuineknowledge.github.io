@@ -1,16 +1,73 @@
 {{ define "main" }}
+<!-- 板块1：企业标语横幅 -->
 <section class="hero-banner">
     <div class="hero-content">
-        <h1>用知识创造价值</h1>
-        <p>Genuine Knowledge —— 专注于深度知识服务与技术创新</p>
+        <h1>用知识创造真实价值</h1>
+        <p>专注深度知识服务与技术创新</p>
     </div>
 </section>
 
-<section class="about-section">
+<!-- 板块2：公司简介 -->
+<section class="section about-section">
     <div class="container">
-        <h2>关于我们</h2>
+        <h2 class="section-title">关于我们</h2>
         <div class="about-content">
-            {{ .Content }}
+            <p>{{ .Site.Title }}是一家专注于知识服务与技术创新的科技公司。我们致力于通过前沿技术与深度行业认知，为客户创造真实可感知的价值。</p>
+        </div>
+    </div>
+</section>
+
+<!-- 板块3：企业文化 -->
+<section class="section culture-section" style="background: #f9fafb;">
+    <div class="container">
+        <h2 class="section-title">企业文化</h2>
+        <div class="culture-grid">
+            <div class="culture-card">
+                <h3>求真务实</h3>
+                <p>独立思考，刨根问底，深入事实本质，以实际效果为唯一评判标准。</p>
+            </div>
+            <div class="culture-card">
+                <h3>持续创新</h3>
+                <p>保持创业心态，紧跟前沿技术，不断突破边界，追求更优解决方案。</p>
+            </div>
+            <div class="culture-card">
+                <h3>坦诚清晰</h3>
+                <p>就事论事，理性沟通，直接表达真实想法，反对模糊空泛的表述。</p>
+            </div>
+            <div class="culture-card">
+                <h3>共同成长</h3>
+                <p>相信并认同使命愿景，持续学习不设边界，与组织和客户一同成长。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 板块4：发展历程 -->
+<section class="section history-section">
+    <div class="container">
+        <h2 class="section-title">发展历程</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2025年1月</div>
+                <div class="timeline-content">
+                    <h4>公司正式成立</h4>
+                    <p>聚焦知识服务与AI技术融合，启动核心产品研发。</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2025年12月</div>
+                <div class="timeline-content">
+                    <h4>完成种子轮融资</h4>
+                    <p>获得行业头部机构投资，团队规模扩充，加速产品落地。</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026年7月</div>
+                <div class="timeline-content">
+                    <h4>知识服务平台1.0发布</h4>
+                    <p>面向企业客户的智能知识管理平台正式上线，开启商业化落地。</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
