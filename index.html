@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genuine Knowledge</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#333;line-height:1.6}
+        .site-header{background:#2667ff;color:#fff;height:64px;position:sticky;top:0;z-index:100}
+        .header-container{max-width:1200px;margin:0 auto;height:100%;padding:0 24px;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-size:20px;font-weight:600}
+        .site-nav ul{display:flex;gap:48px;list-style:none}
+        .site-nav a{color:#fff;text-decoration:none;opacity:0.9;transition:opacity .2s}
+        .site-nav a:hover{opacity:1;font-weight:500}
+        .hero{background:linear-gradient(135deg,#2667ff 0%,#5b8dff 100%);color:#fff;padding:120px 24px;text-align:center}
+        .hero h1{font-size:48px;margin-bottom:16px}
+        .hero p{font-size:20px;opacity:0.9}
+        .section{max-width:1200px;margin:0 auto;padding:80px 24px}
+        .section h2{font-size:32px;margin-bottom:32px;text-align:center}
+        .about-content{font-size:16px;color:#555;max-width:800px;margin:0 auto;text-align:center}
+        .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+        .product-card{padding:32px;border:1px solid #eee;border-radius:8px;transition:box-shadow .2s}
+        .product-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08)}
+        .product-card h3{font-size:20px;margin-bottom:12px}
+        .news-list{max-width:800px;margin:0 auto}
+        .news-item{padding:24px 0;border-bottom:1px solid #eee}
+        .news-item h3{font-size:18px;margin-bottom:8px}
+        .news-item a{color:#2667ff;text-decoration:none}
+        .news-item time{color:#999;font-size:14px}
+        .join-content{text-align:center;max-width:600px;margin:0 auto}
+        .join-btn{display:inline-block;margin-top:24px;padding:12px 32px;background:#2667ff;color:#fff;text-decoration:none;border-radius:4px;transition:background .2s}
+        .join-btn:hover{background:#1d52cc}
+        .site-footer{background:#f5f7fa;padding:30px 24px;text-align:center;color:#666;font-size:14px;margin-top:40px}
+        @media (max-width:768px){
+            .site-nav ul{gap:24px}
+            .hero h1{font-size:32px}
+            .product-grid{grid-template-columns:1fr}
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">Genuine Knowledge</div>
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="#about">关于我们</a></li>
+                    <li><a href="#products">我们的产品</a></li>
+                    <li><a href="#news">新闻动态</a></li>
+                    <li><a href="#join">加入我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>用知识创造真实价值</h1>
+            <p>专注深度知识服务与技术创新</p>
+        </section>
+
+        <section id="about" class="section">
+            <h2>关于我们</h2>
+            <div class="about-content">
+                <p>Genuine Knowledge 是一家专注于知识服务与技术创新的科技公司。我们致力于通过前沿技术与深度行业认知，为客户创造真实可感知的价值。</p>
+            </div>
+        </section>
+
+        <section id="products" class="section" style="background:#f9fafb">
+            <h2>我们的产品</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <h3>产品一</h3>
+                    <p>产品介绍描述，后续可补充详细内容。</p>
+                </div>
+                <div class="product-card">
+                    <h3>产品二</h3>
+                    <p>产品介绍描述，后续可补充详细内容。</p>
+                </div>
+                <div class="product-card">
+                    <h3>产品三</h3>
+                    <p>产品介绍描述，后续可补充详细内容。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="news" class="section">
+            <h2>新闻动态</h2>
+            <div class="news-list">
+                <div class="news-item">
+                    <h3><a href="#">公司正式发布全新知识服务平台</a></h3>
+                    <time>2025-01-01</time>
+                    <p>新闻摘要内容，后续可补充完整新闻详情。</p>
+                </div>
+                <div class="news-item">
+                    <h3><a href="#">公司完成新一轮融资</a></h3>
+                    <time>2024-12-01</time>
+                    <p>新闻摘要内容，后续可补充完整新闻详情。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="join" class="section" style="background:#f9fafb">
+            <h2>加入我们</h2>
+            <div class="join-content">
+                <p>我们正在招募优秀的人才，如果你对知识服务与技术创新充满热情，欢迎加入我们。</p>
+                <a href="#" class="join-btn">查看职位</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Genuine Knowledge. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
