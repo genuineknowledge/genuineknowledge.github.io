@@ -1,19 +1,15 @@
 <header class="site-header">
-    <div class="header-container">
-        <a href="{{ "/" | relURL }}" class="logo">
-            <span class="logo-text">{{ .Site.Title }}</span>
-        </a>
-        <nav class="site-nav">
-            <ul>
-                {{ range .Site.Menus.main }}
-                <li>
-                    <a href="{{ .URL | relURL }}" 
-                       class="{{ if $.IsMenuCurrent "main" . }}active{{ end }}">
-                        {{ .Name }}
-                    </a>
-                </li>
-                {{ end }}
-            </ul>
-        </nav>
-    </div>
+  <div class="container nav-wrapper">
+    <a href="/" class="nav-logo">
+      <img src="/images/logo-full.png" alt="真知人工智能">
+    </a>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="/#about">关于我们</a></li>
+        <li><a href="/products/">我们的产品</a></li>
+        <li><a href="/news/">新闻动态</a></li>
+        <li><a href="/join-us/">加入我们</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
