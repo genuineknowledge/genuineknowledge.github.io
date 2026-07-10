@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    {{ partial "head.html" . }}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }} - {{ .Site.Params.companyName }}</title>
+    <meta name="description" content="{{ .Site.Params.siteDesc }}">
+    <link rel="icon" type="image/png" href="{{ .Site.Params.logoIcon }}">
+    <link rel="stylesheet" href="/css/main.css">
 </head>
-<body>
+<body class="{{ if .IsHome }}home{{ end }}">
     {{ partial "header.html" . }}
-    
-    <main class="main-content">
+
+    <main class="site-main">
         {{ block "main" . }}{{ end }}
     </main>
 
     {{ partial "footer.html" . }}
+
+    <script src="/js/main.js"></script>
 </body>
 </html>

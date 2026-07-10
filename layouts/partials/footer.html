@@ -1,8 +1,27 @@
 <footer class="site-footer">
-  <div class="container">
-    <div class="footer-logo">
-      <img src="/images/logo-icon.png" alt="真知智能">
+    <div class="container footer-container">
+        <div class="footer-brand">
+            <img src="{{ .Site.Params.logoFull }}" alt="{{ .Site.Params.brandName }}" class="footer-logo">
+            <p>{{ .Site.Params.siteDesc }}</p>
+        </div>
+        <div class="footer-links">
+            <h4>导航</h4>
+            {{ range .Site.Menus.main }}
+            <a href="{{ .URL }}">{{ .Name }}</a>
+            {{ end }}
+        </div>
     </div>
-    <p>© 2026 真知人工智能. All rights reserved.</p>
-  </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <p>&copy; {{ now.Format "2006" }} {{ .Site.Params.companyName }}. All rights reserved.</p>
+        </div>
+    </div>
 </footer>
+
+<!-- 通用弹窗容器 -->
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box">
+        <button class="modal-close" id="modalClose">×</button>
+        <div class="modal-content" id="modalContent"></div>
+    </div>
+</div>

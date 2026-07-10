@@ -26,3 +26,20 @@ enableRobotsTXT = true
 
 [outputs]
   home = ["HTML"]
+
+[params]
+  # 原有品牌参数
+  brandName = "真知智能"
+  brandEn = "GENUINE KNOWLEDGE"
+  primaryColor = "#1a3b90"
+  siteDesc = "专注深度知识服务与AI技术创新，用知识创造真实价值"
+  
+  # 模板核心参数
+  companyName = "真知人工智能"
+  slogan = "用知识创造真实价值"
+  subSlogan = "专注深度知识服务与技术创新"
+  logoFull = "/images/logo-full.png"
+  logoIcon = "/images/logo-icon.png"
+
+[markup.goldmark.renderer]
+unsafe = true

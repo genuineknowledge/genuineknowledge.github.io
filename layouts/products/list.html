@@ -1,19 +1,47 @@
 {{ define "main" }}
-<main>
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">我们的产品</h2>
-      <div class="product-grid">
-        <!-- Haitun Agent 产品卡片 -->
-        <div class="product-card">
-          <h3>Haitun Agent</h3>
-          <p>本地运行的AI智能体，支持长上下文稳定执行与持续自进化，可自动完成文件整理、数据清洗、格式转换等长程复杂任务，全程数据留存本地，隐私安全可控。</p>
-          <a href="http://www.genuine-knowledge.com/haitun/" class="btn-primary" target="_blank">了解更多</a>
+<!-- 顶部滚动进度条 -->
+<div class="product-progress" id="productProgress">
+    <div class="progress-bar" id="progressBar"></div>
+</div>
+
+<div class="products-fullpage" id="productsFullpage">
+    {{ range $index, $product := .Site.Data.products }}
+    <section class="product-section section-animate" data-index="{{ $index }}">
+        <div class="container product-container {{ if not (modBool $index 2) }}reverse{{ end }}">
+            <div class="product-text">
+                <span class="product-index">{{ .index }}</span>
+                <h2 class="product-name">{{ .name }}</h2>
+                <p class="product-desc">{{ .desc }}</p>
+                <ul class="product-features">
+                    {{ range .features }}
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        {{ . }}
+                    </li>
+                    {{ end }}
+                </ul>
+                <div class="product-buttons">
+                    <button class="btn btn-primary product-detail-btn" data-product="{{ .name }}">了解更多</button>
+                    <button class="btn btn-outline">预约演示</button>
+                </div>
+            </div>
+            <div class="product-image">
+                <div class="product-img-wrapper">
+                    <div class="product-glow"></div>
+                    <img src="{{ .image }}" alt="{{ .name }}" class="product-img">
+                </div>
+            </div>
         </div>
-        
-        <!-- 后续新增产品，直接复制上方卡片结构即可 -->
-      </div>
-    </div>
-  </section>
-</main>
+    </section>
+    {{ end }}
+</div>
+
+<!-- 右侧滚动指示器 -->
+<div class="scroll-indicator" id="scrollIndicator">
+    {{ range $index, $product := .Site.Data.products }}
+    <span class="indicator-dot {{ if eq $index 0 }}active{{ end }}" data-target="{{ $index }}" title="{{ .name }}"></span>
+    {{ end }}
+</div>
 {{ end }}

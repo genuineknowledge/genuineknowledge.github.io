@@ -1,0 +1,40 @@
+{{ define "main" }}
+<section class="join-page">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-en">JOIN US</span>
+            <h1 class="section-title">加入我们</h1>
+            <p class="section-desc">如果你对知识服务与技术创新充满热情，欢迎加入我们，一同创造真实价值</p>
+            <div class="section-divider"></div>
+        </div>
+        
+        <div class="job-list">
+            {{ range .Site.Data.jobs }}
+            <div class="job-card" data-job-id="{{ .id }}">
+                <div class="job-header">
+                    <div>
+                        <h3 class="job-title">{{ .title }}</h3>
+                        <span class="job-location">{{ .location }}</span>
+                    </div>
+                    <button class="job-toggle">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                </div>
+                <div class="job-content">
+                    <p class="job-desc">{{ .desc }}</p>
+                    <h4>岗位要求</h4>
+                    <ul class="job-requirements">
+                        {{ range .requirements }}
+                        <li>{{ . }}</li>
+                        {{ end }}
+                    </ul>
+                    <button class="btn btn-primary apply-btn" data-job="{{ .title }}">投递简历</button>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}
