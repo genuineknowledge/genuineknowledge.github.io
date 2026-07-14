@@ -114,7 +114,7 @@
     </div>
 </section>
 
-<!-- 合作企业 -->
+<!-- 合作企业（单张整图，自适应） -->
 <section class="partners-section section-animate">
     <div class="container">
         <div class="section-header">
@@ -124,12 +124,8 @@
             <div class="section-divider"></div>
         </div>
         
-        <div class="partners-grid">
-            {{ range .Site.Data.partners }}
-            <a href="{{ .link }}" target="_blank" class="partner-item" title="{{ .name }}">
-                <img src="{{ .logo }}" alt="{{ .name }}">
-            </a>
-            {{ end }}
+        <div class="partners-image-wrapper">
+            <img src="/images/partners.png" alt="合作伙伴" class="partners-image">
         </div>
     </div>
 </section>
