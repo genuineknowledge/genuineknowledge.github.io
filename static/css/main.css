@@ -6,26 +6,27 @@
 }
 
 :root {
-    --primary: #1a3b90;
-    --primary-light: #3b66d9;
-    --primary-dark: #0f2866;
-    --primary-glow: rgba(26, 59, 144, 0.12);
+    /* 全新天蓝色主题系列 */
+    --primary: #3b98e9;        /* 主天蓝色，标准天蓝 */
+    --primary-light: #74b9f3;  /* 浅天蓝，hover高亮 */
+    --primary-dark: #2276c2;   /* 深一点天蓝，hover加深 */
+    --primary-glow: rgba(59, 152, 233, 0.12); /* 淡天蓝柔光 */
     --bg: #ffffff;
-    --bg-light: #f8fafc;
-    --bg-dark: #0b1a3d;
-    --text-primary: #0f172a; /* 深黑色，清晰可读 */
-    --text-secondary: #475569; /* 深灰，不发虚 */
+    --bg-light: #f5faff;       /* 配套极浅天蓝背景，适配板块底色 */
+    --bg-dark: #102a48;        /* 页脚深蓝微调，和天蓝适配不突兀 */
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
     --text-light: #64748b;
     --border: #e2e8f0;
     --white: #ffffff;
     --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.06);
     --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
-    --shadow-lg: 0 20px 40px rgba(26, 59, 144, 0.12);
+    --shadow-lg: 0 20px 40px rgba(59, 152, 233, 0.12); /* 阴影柔光同步天蓝 */
     --radius-sm: 8px;
     --radius-md: 12px;
     --radius-lg: 20px;
     --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    --nav-height: 80px; /* 导航加高 */
+    --nav-height: 80px;
 }
 
 html {

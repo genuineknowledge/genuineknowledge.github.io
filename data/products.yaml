@@ -1,25 +1,24 @@
 - id: 1
-  index: "产品 01"
-  name: "Genuine-DataAgent 智能数据分析"
+  name: "HaiTun agent"
+  desc: "依托原创可微符号知识方程技术构建智能体架构，自主完成工具调用、长程规划、记忆存储与安全管控，解决大模型幻觉、不稳定、难调试痛点，可自主迭代优化适配各行业复杂业务流程。"
+  features:
+    - "原生自进化能力，无需人工持续维护规则"
+    - "长链路规划执行错误率大幅低于行业主流方案"
+    - "百万级超长上下文精准记忆，信息检索无失真"
+    - "内置 Fusion Guard 安全组件，规避越权、提示注入风险"
+    - "适配代码、数据分析、办公、运维等多类工具场景"
+  image: "/images/product1.png"
+  btnText: "了解更多"
+  btnLink: "https://www.genuineknowledge.cn/haitun/"
+
+- id: 2
+  name: "NL2SQL数据引擎"
   desc: "自然语言提问，自动生成SQL，在你的数据源上执行，返回表格、图表与洞见。准确率领先同类产品，越用越懂你的业务口径。"
   features:
     - "准确率领先同类产品"
     - "越用越懂业务口径"
     - "兼容主流数据库"
     - "一键导出图表报表"
-  image: "/images/product1.png"
-  btnText: "了解更多"
-  btnLink: "#"
-
-- id: 2
-  index: "产品 02"
-  name: "企业知识服务平台"
-  desc: "面向企业客户的一站式智能知识管理平台，整合知识沉淀、检索、问答与分析能力，助力企业打造专属知识大脑，提升组织协作与决策效率。"
-  features:
-    - "多源知识统一接入"
-    - "智能语义精准检索"
-    - "AI问答与内容生成"
-    - "可视化知识图谱"
   image: "/images/product2.png"
   btnText: "了解更多"
   btnLink: "#"

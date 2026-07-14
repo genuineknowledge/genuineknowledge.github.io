@@ -1,23 +1,23 @@
 - id: 1
-  tag: "大数据与AI融合"
-  title: "让数据创造价值"
-  subtitle: "深度挖掘数据潜能，助力企业数字化转型升级"
+  tag: "通用智能体平台"
+  title: "HaiTun agent"
+  subtitle: "融合可微符号技术根治大模型幻觉，自主迭代适配全行业复杂业务流程"
   image: "/images/banner1.png"
   btnText: "了解更多"
   btnLink: "/products/"
 
 - id: 2
-  tag: "本地智能体引擎"
-  title: "隐私安全 本地运行"
-  subtitle: "全流程数据留存本地，核心能力私有化部署，保障信息安全可控"
+  tag: "大数据与 AI 融合"
+  title: "NL2SQL数据引擎"
+  subtitle: "自然语言一键生成 SQL，高准确率智能分析，高效释放企业数据生产力"
   image: "/images/banner2.png"
   btnText: "了解更多"
   btnLink: "/products/"
 
 - id: 3
-  tag: "持续进化升级"
-  title: "用AI赋能知识价值"
-  subtitle: "前沿技术与行业认知深度结合，持续迭代创造真实可感知的价值"
+  tag: "走符号融合差异化 AI 路线"
+  title: "真知人工智能"
+  subtitle: "独创符号语义技术体系，打造靠谱的自进化大模型与Agent"
   image: "/images/banner3.png"
   btnText: "了解更多"
   btnLink: "/products/"

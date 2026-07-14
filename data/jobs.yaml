@@ -1,6 +1,6 @@
 - id: 1
-  title: "前端开发工程师"
-  location: "合肥 / 远程"
+  title: "编程实习生"
+  location: "合肥"
   desc: "负责公司官网及产品前端开发，参与交互设计与性能优化，打造极致的用户体验。"
   requirements:
     - "熟练掌握 HTML/CSS/JavaScript，熟悉现代前端框架"
@@ -10,7 +10,7 @@
 
 - id: 2
   title: "AI算法工程师"
-  location: "合肥 / 远程"
+  location: "合肥"
   desc: "负责智能体相关算法研发，探索大模型应用与落地场景，推动产品核心能力迭代。"
   requirements:
     - "熟悉大语言模型原理与应用开发"
