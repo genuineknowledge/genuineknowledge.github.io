@@ -1,5 +1,5 @@
 {{ define "main" }}
-<!-- Banner 轮播区域 -->
+<!-- Banner 轮播区域（16:9比例，避开导航） -->
 <section class="banner-section" id="banner">
     <div class="banner-carousel" id="bannerCarousel">
         {{ range $index, $banner := .Site.Data.banners }}
@@ -10,8 +10,7 @@
                 <h1 class="banner-title">{{ .title }}</h1>
                 <p class="banner-subtitle">{{ .subtitle }}</p>
                 <div class="banner-buttons">
-                    <a href="{{ .primaryLink }}" class="btn btn-primary">{{ .primaryBtn }}</a>
-                    <a href="{{ .secondaryLink }}" class="btn btn-outline-light">{{ .secondaryBtn }}</a>
+                    <a href="{{ .btnLink }}" class="btn btn-primary">{{ .btnText }}</a>
                 </div>
             </div>
         </div>
@@ -37,7 +36,7 @@
     </div>
 </section>
 
-<!-- 企业文化区域 -->
+<!-- 企业文化：目标、愿景、使命 -->
 <section class="culture-section section-animate" id="about">
     <div class="container">
         <div class="section-header">
@@ -51,27 +50,13 @@
             <div class="culture-card">
                 <div class="culture-icon">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M9 18h6"></path>
-                        <path d="M10 22h4"></path>
-                        <path d="M12 2a7 7 0 0 0-7 7c0 3 2 5 2 8h10c0-3 2-5 2-8a7 7 0 0 0-7-7z"></path>
+                        <path d="M12 20h9"></path>
+                        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
                     </svg>
                 </div>
-                <span class="culture-en">CORE VALUES</span>
-                <h3>核心价值观</h3>
-                <p>求真务实、持续创新、坦诚清晰、共同成长。以实际效果为唯一评判标准，追求更优解决方案。</p>
-            </div>
-
-            <div class="culture-card">
-                <div class="culture-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <circle cx="12" cy="12" r="6"></circle>
-                        <circle cx="12" cy="12" r="2"></circle>
-                    </svg>
-                </div>
-                <span class="culture-en">MISSION</span>
-                <h3>企业使命</h3>
-                <p>用智能技术赋能千行百业，让知识与数据创造真正的商业价值与社会价值，助力产业数字化升级。</p>
+                <span class="culture-en">GOAL</span>
+                <h3>目标</h3>
+                <p>打造靠谱的自进化大模型与Agent。</p>
             </div>
 
             <div class="culture-card">
@@ -82,14 +67,25 @@
                     </svg>
                 </div>
                 <span class="culture-en">VISION</span>
-                <h3>企业愿景</h3>
-                <p>成为值得信赖的人工智能知识服务引领者，推动产业智能化升级与可持续发展，创造真实持久价值。</p>
+                <h3>愿景</h3>
+                <p>符号连接融合实现ASI。</p>
+            </div>
+
+            <div class="culture-card">
+                <div class="culture-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                    </svg>
+                </div>
+                <span class="culture-en">MISSION</span>
+                <h3>使命</h3>
+                <p>让AI按需赋能。</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- 发展历程时间轴 -->
+<!-- 发展历程时间轴（5个节点，左右交替） -->
 <section class="timeline-section section-animate" id="timeline">
     <div class="container">
         <div class="section-header">
@@ -100,32 +96,37 @@
         </div>
         
         <div class="timeline">
-            <div class="timeline-item timeline-left">
+            {{ range $index, $item := .Site.Data.timeline }}
+            <div class="timeline-item {{ if modBool $index 2 }}timeline-right{{ else }}timeline-left{{ end }} {{ if .isFuture }}timeline-future{{ end }}">
+                {{ if modBool $index 2 }}<div class="timeline-dot"></div>{{ end }}
                 <div class="timeline-content">
-                    <h3 class="timeline-year">2025</h3>
-                    <h4 class="timeline-title">公司正式成立</h4>
-                    <p>聚焦知识服务与AI技术融合，启动核心产品研发，组建初始技术团队。</p>
+                    <h3 class="timeline-year">{{ .date }}</h3>
+                    <h4 class="timeline-title">{{ .title }}</h4>
+                    <p>{{ .desc }}</p>
                 </div>
-                <div class="timeline-dot"></div>
+                {{ if not (modBool $index 2) }}<div class="timeline-dot"></div>{{ end }}
             </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
 
-            <div class="timeline-item timeline-right">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3 class="timeline-year">2025</h3>
-                    <h4 class="timeline-title">完成种子轮融资</h4>
-                    <p>获得行业头部机构投资，团队规模扩充，加速产品落地与市场拓展。</p>
-                </div>
-            </div>
-
-            <div class="timeline-item timeline-left">
-                <div class="timeline-content">
-                    <h3 class="timeline-year">2026</h3>
-                    <h4 class="timeline-title">知识服务平台1.0发布</h4>
-                    <p>面向企业客户的智能知识管理平台正式上线，开启商业化落地。</p>
-                </div>
-                <div class="timeline-dot"></div>
-            </div>
+<!-- 合作企业 -->
+<section class="partners-section section-animate">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-en">PARTNERS</span>
+            <h2 class="section-title">合作伙伴与客户</h2>
+            <p class="section-desc">携手行业标杆企业，共同推动智能化升级</p>
+            <div class="section-divider"></div>
+        </div>
+        
+        <div class="partners-grid">
+            {{ range .Site.Data.partners }}
+            <a href="{{ .link }}" target="_blank" class="partner-item" title="{{ .name }}">
+                <img src="{{ .logo }}" alt="{{ .name }}">
+            </a>
+            {{ end }}
         </div>
     </div>
 </section>

@@ -13,11 +13,13 @@
         
         <div class="news-list" id="newsList">
             {{ range .Site.Data.news }}
-            <article class="news-card">
-                <span class="news-date">{{ .date }}</span>
-                <h3 class="news-title">{{ .title }}</h3>
-                <p class="news-summary">{{ .summary }}</p>
-            </article>
+            <a href="{{ .link }}" target="_blank" class="news-card-link">
+                <article class="news-card">
+                    <span class="news-date">{{ .date }}</span>
+                    <h3 class="news-title">{{ .title }}</h3>
+                    <p class="news-summary">{{ .summary }}</p>
+                </article>
+            </a>
             {{ end }}
         </div>
     </div>

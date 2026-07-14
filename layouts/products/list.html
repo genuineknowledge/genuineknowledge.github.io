@@ -6,7 +6,7 @@
 
 <div class="products-fullpage" id="productsFullpage">
     {{ range $index, $product := .Site.Data.products }}
-    <section class="product-section section-animate" data-index="{{ $index }}">
+    <section class="product-section" data-index="{{ $index }}">
         <div class="container product-container {{ if not (modBool $index 2) }}reverse{{ end }}">
             <div class="product-text">
                 <span class="product-index">{{ .index }}</span>
@@ -23,8 +23,7 @@
                     {{ end }}
                 </ul>
                 <div class="product-buttons">
-                    <button class="btn btn-primary product-detail-btn" data-product="{{ .name }}">了解更多</button>
-                    <button class="btn btn-outline">预约演示</button>
+                    <a href="{{ .btnLink }}" class="btn btn-primary product-detail-btn">{{ .btnText }}</a>
                 </div>
             </div>
             <div class="product-image">

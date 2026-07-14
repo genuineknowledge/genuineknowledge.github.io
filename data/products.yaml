@@ -1,14 +1,15 @@
 - id: 1
   index: "产品 01"
-  name: "Haitun Agent 智能体"
-  desc: "本地运行的AI智能体，支持长上下文稳定执行与持续自进化，可自动完成文件整理、数据清洗、格式转换等长程复杂任务，全程数据留存本地，隐私安全可控。"
+  name: "Genuine-DataAgent 智能数据分析"
+  desc: "自然语言提问，自动生成SQL，在你的数据源上执行，返回表格、图表与洞见。准确率领先同类产品，越用越懂你的业务口径。"
   features:
-    - "长上下文稳定执行"
-    - "本地部署 数据不出域"
-    - "多任务自动化编排"
-    - "持续自进化能力"
+    - "准确率领先同类产品"
+    - "越用越懂业务口径"
+    - "兼容主流数据库"
+    - "一键导出图表报表"
   image: "/images/product1.png"
-  detailLink: "#"
+  btnText: "了解更多"
+  btnLink: "#"
 
 - id: 2
   index: "产品 02"
@@ -20,4 +21,5 @@
     - "AI问答与内容生成"
     - "可视化知识图谱"
   image: "/images/product2.png"
-  detailLink: "#"
+  btnText: "了解更多"
+  btnLink: "#"

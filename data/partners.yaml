@@ -1,0 +1,31 @@
+- name: "华为"
+  logo: "/images/partner/huawei.png"
+  link: "#"
+
+- name: "字节跳动"
+  logo: "/images/partner/bytedance.png"
+  link: "#"
+
+- name: "宁德时代"
+  logo: "/images/partner/catl.png"
+  link: "#"
+
+- name: "中国移动"
+  logo: "/images/partner/chinamobile.png"
+  link: "#"
+
+- name: "中国电信"
+  logo: "/images/partner/chinatelecom.png"
+  link: "#"
+
+- name: "西门子"
+  logo: "/images/partner/siemens.png"
+  link: "#"
+
+- name: "大众"
+  logo: "/images/partner/volkswagen.png"
+  link: "#"
+
+- name: "药明康德"
+  logo: "/images/partner/wuxiapptec.png"
+  link: "#"
