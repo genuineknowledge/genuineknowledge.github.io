@@ -36,8 +36,10 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", Roboto, sans-serif;
     color: var(--text-primary);
     background: var(--bg);
-    line-height: 1.7;
+    line-height: 1.75;
     overflow-x: hidden;
+    font-size: 17px; /* 原16px → 加大1px */
+    font-weight: 500; /* 原400细体 → 500中等加粗，不再单薄 */
 }
 
 .container {
@@ -191,8 +193,8 @@ body {
 .nav-link {
     color: var(--text-primary);
     text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 700;
     position: relative;
     transition: var(--transition);
 }
