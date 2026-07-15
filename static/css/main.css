@@ -115,15 +115,15 @@ body {
     font-family: inherit;
 }
 .btn-primary {
-    background: #111827;
+    background: #1a3b90;
     color: #ffffff;
-    box-shadow: 0 4px 14px rgba(17, 24, 39, 0.25);
+    box-shadow: 0 4px 14px rgba(26, 59, 144, 0.25);
 }
 
 .btn-primary:hover {
-    background: #000000;
+    background: #0f2866;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(17, 24, 39, 0.35);
+    box-shadow: 0 8px 20px rgba(26, 59, 144, 0.35);
 }
 .btn-outline {
     background: transparent;
@@ -303,15 +303,14 @@ body {
 .banner-tag {
     display: inline-block;
     padding: 10px 22px;
-    background: rgba(255, 255, 255, 0.85);
-    color: #111827;
+    background: rgba(26, 59, 144, 0.18);
+    color: #1a3b90;
     border-radius: 50px;
     font-size: 15px;
     font-weight: 700;
     margin-bottom: 24px;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(26, 59, 144, 0.25);
 }
-
 .banner-title {
     font-size: 56px;
     font-weight: 800;
@@ -607,28 +606,28 @@ body {
 .partner-item {
     background: #ffffff;
     border-radius: var(--radius-md);
-    padding: 36px 28px;
+    padding: 40px 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 130px;
+    height: 140px;
     transition: var(--transition);
     filter: none;
     opacity: 1;
-    border: 1px solid var(--border);
+    border: none;
 }
 
 .partner-item:hover {
     filter: none;
     opacity: 1;
-    transform: translateY(-6px);
+    transform: translateY(-8px);
     box-shadow: var(--shadow-md);
     background: #ffffff;
 }
 
 .partner-item img {
     max-width: 100%;
-    max-height: 80px;
+    max-height: 88px;
     object-fit: contain;
 }
 /* ==================== 产品全屏滚动页（大图+整屏+大字） ==================== */

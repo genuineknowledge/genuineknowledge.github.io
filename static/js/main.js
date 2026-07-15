@@ -115,6 +115,17 @@ function initScrollAnimations() {
 
 // 产品页：滚轮整屏翻页（滚一下切一屏）
 function initProductFullpage() {
+    const params = new URLSearchParams(window.location.search);
+    const productIndex = params.get('product');
+
+    if (productIndex) {
+        const index = parseInt(productIndex, 10) - 1;
+        if (!isNaN(index) && index >= 0 && index < total) {
+            setTimeout(() => {
+                goToSection(index);
+            }, 300);
+        }
+    }
     const sections = document.querySelectorAll('.product-section');
     const dots = document.querySelectorAll('#scrollIndicator .indicator-dot');
     const progressBar = document.getElementById('progressBar');

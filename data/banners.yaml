@@ -4,7 +4,7 @@
   subtitle: "融合可微符号技术根治大模型幻觉，自主迭代适配全行业复杂业务流程"
   image: "/images/banner1.jpg"
   btnText: "了解更多"
-  btnLink: "/products/"
+  btnLink: "/products/?product=1"
 
 - id: 2
   tag: "大数据与 AI 融合"
@@ -12,7 +12,7 @@
   subtitle: "自然语言一键生成 SQL，高准确率智能分析，高效释放企业数据生产力"
   image: "/images/banner2.jpg"
   btnText: "了解更多"
-  btnLink: "/products/"
+  btnLink: "/products/?product=2"
 
 - id: 3
   tag: "走符号融合差异化 AI 路线"
@@ -20,4 +20,4 @@
   subtitle: "独创符号语义技术体系，打造靠谱的自进化大模型与Agent"
   image: "/images/banner3.jpg"
   btnText: "了解更多"
-  btnLink: "/products/"
+  btnLink: "/"
