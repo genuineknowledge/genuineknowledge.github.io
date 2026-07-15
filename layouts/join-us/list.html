@@ -30,7 +30,11 @@
                         <li>{{ . }}</li>
                         {{ end }}
                     </ul>
-                    <button class="btn btn-primary apply-btn" data-job="{{ .title }}">投递简历</button>
+                    <!-- 替换按钮为邮箱文字 -->
+                     <div class="apply-info">
+                        <p class="apply-tip">欢迎大家投递简历</p>
+                        <p class="apply-email"><strong>HR邮箱：hr@genuineknowledge.cn</strong></p>
+                    </div>
                 </div>
             </div>
             {{ end }}
