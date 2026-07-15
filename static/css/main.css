@@ -253,11 +253,10 @@ body {
 .banner-section {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9;
-    max-height: 80vh;
+    height: 70vh;
+    max-height: 720px;
     min-height: 480px;
     overflow: hidden;
-    /* 超宽屏两侧渐变填充，和图片自然融合 */
     background: linear-gradient(90deg, #eef2ff 0%, #f8fafc 50%, #eef2ff 100%);
 }
 
@@ -267,7 +266,6 @@ body {
     height: 100%;
     margin: 0 auto;
 }
-
 .banner-slide {
     position: absolute;
     top: 0;
@@ -281,7 +279,7 @@ body {
     transition: opacity 1s ease;
     display: flex;
     align-items: center;
-    /* 优化图片渲染清晰度 */
+
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
 }
@@ -486,11 +484,12 @@ body {
     margin-bottom: 18px;
     color: var(--text-primary);
 }
-
 .culture-card p {
-    color: var(--text-secondary);
-    font-size: 16px; /* 正文放大 */
-    line-height: 1.85;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.65;
+    letter-spacing: 1px;
+    color: #1a3b90;
 }
 
 /* ==================== 发展历程时间轴（字体放大） ==================== */
@@ -608,27 +607,27 @@ body {
 .partner-item {
     background: var(--bg-light);
     border-radius: var(--radius-md);
-    padding: 24px;
+    padding: 32px 24px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100px;
+    height: 120px;
     transition: var(--transition);
-    filter: grayscale(80%);
-    opacity: 0.85;
+    filter: none;
+    opacity: 1;
 }
 
 .partner-item:hover {
-    filter: grayscale(0%);
+    filter: none;
     opacity: 1;
-    transform: translateY(-4px);
+    transform: translateY(-6px);
     box-shadow: var(--shadow-md);
     background: white;
 }
 
 .partner-item img {
     max-width: 100%;
-    max-height: 56px;
+    max-height: 72px;
     object-fit: contain;
 }
 /* ==================== 产品全屏滚动页（大图+整屏+大字） ==================== */
@@ -1301,13 +1300,7 @@ body {
     object-fit: contain;
 }
 
-.culture-card p {
-    color: var(--text-primary);
-    font-size: 17px;
-    font-weight: 500;
-    line-height: 1.9;
-    letter-spacing: 0.5px;
-}
+
 
 .apply-info {
     margin-top: 20px;
