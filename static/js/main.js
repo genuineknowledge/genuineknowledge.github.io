@@ -113,19 +113,8 @@ function initScrollAnimations() {
     elements.forEach(el => observer.observe(el));
 }
 
-// 产品页：滚轮整屏翻页（滚一下切一屏）
+// 产品页：滚轮整屏翻页（仅修改此函数，其余代码完全不变）
 function initProductFullpage() {
-    const params = new URLSearchParams(window.location.search);
-    const productIndex = params.get('product');
-
-    if (productIndex) {
-        const index = parseInt(productIndex, 10) - 1;
-        if (!isNaN(index) && index >= 0 && index < total) {
-            setTimeout(() => {
-                goToSection(index);
-            }, 300);
-        }
-    }
     const sections = document.querySelectorAll('.product-section');
     const dots = document.querySelectorAll('#scrollIndicator .indicator-dot');
     const progressBar = document.getElementById('progressBar');
@@ -139,7 +128,8 @@ function initProductFullpage() {
     // 初始化第一屏
     sections[0].classList.add('active');
 
-    function goToSection(index) {
+    // 跳转区块，同步更新url参数
+    function goToSection(index, pushUrl = true) {
         if (isAnimating || index < 0 || index >= total) return;
         isAnimating = true;
 
@@ -156,10 +146,40 @@ function initProductFullpage() {
             progressBar.style.width = ((currentIndex / (total - 1)) * 100) + '%';
         }
 
+        // 更新地址栏 ?product=数字
+        if (pushUrl) {
+            const newUrl = new URL(window.location);
+            newUrl.searchParams.set('product', currentIndex + 1);
+            history.pushState({}, '', newUrl);
+        }
+
         setTimeout(() => {
             isAnimating = false;
         }, animateDuration);
     }
+
+    // 页面加载时读取url参数，自动跳对应产品
+    window.addEventListener('load', () => {
+        const params = new URLSearchParams(window.location.search);
+        const productIndex = params.get('product');
+        if (productIndex) {
+            const index = parseInt(productIndex, 10) - 1;
+            if (!isNaN(index) && index >= 0 && index < total) {
+                setTimeout(() => goToSection(index, false), 300);
+            }
+        }
+    });
+
+    // 浏览器前进后退监听
+    window.addEventListener('popstate', () => {
+        const params = new URLSearchParams(window.location.search);
+        const productIndex = params.get('product');
+        if (!productIndex) return;
+        const index = parseInt(productIndex, 10) - 1;
+        if (!isNaN(index) && index >= 0 && index < total) {
+            goToSection(index, false);
+        }
+    });
 
     // 滚轮监听（带节流，一次滚动只翻一屏）
     document.addEventListener('wheel', function(e) {
