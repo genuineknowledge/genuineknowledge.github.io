@@ -85,49 +85,5 @@
     </div>
 </section>
 
-<!-- 发展历程时间轴（5个节点，左右交替） -->
-<section class="timeline-section section-animate" id="timeline">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-en">OUR JOURNEY</span>
-            <h2 class="section-title">发展历程</h2>
-            <p class="section-desc">每一步成长，都见证着我们对技术与创新的执着追求</p>
-            <div class="section-divider"></div>
-        </div>
-        
-        <div class="timeline">
-            {{ range $index, $item := .Site.Data.timeline }}
-            <div class="timeline-item {{ if modBool $index 2 }}timeline-right{{ else }}timeline-left{{ end }} {{ if .isFuture }}timeline-future{{ end }}">
-                {{ if modBool $index 2 }}<div class="timeline-dot"></div>{{ end }}
-                <div class="timeline-content">
-                    <h3 class="timeline-year">{{ .date }}</h3>
-                    <h4 class="timeline-title">{{ .title }}</h4>
-                    <p>{{ .desc }}</p>
-                </div>
-                {{ if not (modBool $index 2) }}<div class="timeline-dot"></div>{{ end }}
-            </div>
-            {{ end }}
-        </div>
-    </div>
-</section>
 
-<!-- 合作企业（单个logo网格形式） -->
-<section class="partners-section section-animate">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-en">PARTNERS</span>
-            <h2 class="section-title">合作伙伴与客户</h2>
-            <p class="section-desc">携手行业标杆企业，共同推动智能化升级</p>
-            <div class="section-divider"></div>
-        </div>
-        
-        <div class="partners-grid">
-            {{ range .Site.Data.partners }}
-            <a href="{{ .link }}" target="_blank" class="partner-item" title="{{ .name }}">
-                <img src="{{ .logo }}" alt="{{ .name }}">
-            </a>
-            {{ end }}
-        </div>
-    </div>
-</section>
 {{ end }}
