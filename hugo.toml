@@ -5,6 +5,7 @@ enableRobotsTXT = true
 
 [menu]
   [[menu.main]]
+<<<<<<< HEAD
     name = "我们的产品"
     url = "/products/"
     weight = 1
@@ -14,6 +15,15 @@ enableRobotsTXT = true
     url = "/"
     weight = 2
 
+=======
+    name = "关于我们"
+    url = "/"
+    weight = 2
+  [[menu.main]]
+    name = "我们的产品"
+    url = "/products/"
+    weight = 1
+>>>>>>> 66915c402029b9d4bfbb76609647cb4d609144e5
   [[menu.main]]
     name = "加入我们"
     url = "/join-us/"
