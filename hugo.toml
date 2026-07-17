@@ -7,19 +7,15 @@ enableRobotsTXT = true
   [[menu.main]]
     name = "关于我们"
     url = "/"
-    weight = 1
+    weight = 2
   [[menu.main]]
     name = "我们的产品"
     url = "/products/"
-    weight = 2
-  [[menu.main]]
-    name = "新闻动态"
-    url = "/news/"
-    weight = 3
+    weight = 1
   [[menu.main]]
     name = "加入我们"
     url = "/join-us/"
-    weight = 4
+    weight = 3
 
 [pagination]
   pagerSize = 10
