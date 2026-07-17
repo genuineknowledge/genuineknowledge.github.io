@@ -12,7 +12,7 @@
   btnLink: "https://www.genuineknowledge.cn/haitun/"
 
 - id: 2
-  name: "NL2SQL数据引擎"
+  name: "Haibao Data"
   desc: "自然语言提问，自动生成SQL，在你的数据源上执行，返回表格、图表与洞见。准确率领先同类产品，越用越懂你的业务口径。"
   features:
     - "准确率领先同类产品"
