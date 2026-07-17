@@ -1,20 +1,23 @@
 <header class="site-header" id="siteHeader">
     <div class="container nav-container">
+        <!-- Logo 是跳转按钮，旁边 Slogan 不是按钮 -->
         <a href="/" class="logo-link">
             <img src="{{ .Site.Params.logoFull }}" alt="{{ .Site.Params.brandName }}" class="logo-full">
-            <div class="logo-slogan header-slogan">
-                <span>符号连接融合</span>
-                <span>大模型与智能体</span>
-            </div>
         </a>
-        
+
+        <!-- 旁边 Slogan 不是链接，不能点击 -->
+        <div class="header-slogan-text">
+            <span>符号连接融合</span>
+            <span>大模型与智能体</span>
+        </div>
+
         <nav class="main-nav">
             <ul class="nav-list">
                 <li class="nav-item dropdown">
-                    <button class="nav-btn">我们的产品</button>
+                    <a href="https://www.genuineknowledge.cn/products/?product" class="nav-btn">我们的产品</a>
                     <div class="dropdown-menu">
-                        <a href="/products/?product=1" class="dropdown-card">HaiTun Agent</a>
-                        <a href="/products/?product=2" class="dropdown-card">HaiBao Data</a>
+                        <a href="/products/?product=1" class="dropdown-item">HaiTun Agent</a>
+                        <a href="/products/?product=2" class="dropdown-item">HaiBao Data</a>
                     </div>
                 </li>
                 <li class="nav-item">
@@ -36,7 +39,7 @@
     <div class="mobile-menu" id="mobileMenu">
         <ul class="mobile-nav-list">
             <li>
-                <a href="/products/" class="mobile-nav-link">我们的产品</a>
+                <a href="https://www.genuineknowledge.cn/products/?product" class="mobile-nav-link">我们的产品</a>
                 <div class="mobile-submenu">
                     <a href="/products/?product=1" class="mobile-submenu-item">HaiTun Agent</a>
                     <a href="/products/?product=2" class="mobile-submenu-item">HaiBao Data</a>
