@@ -3,17 +3,18 @@
         <a href="/" class="logo-link">
             <img src="{{ .Site.Params.logoFull }}" alt="{{ .Site.Params.brandName }}" class="logo-full">
             <div class="logo-slogan header-slogan">
-                符号连接融合<br>大模型与智能体
+                <span>符号连接融合</span>
+                <span>大模型与智能体</span>
             </div>
         </a>
-
+        
         <nav class="main-nav">
             <ul class="nav-list">
                 <li class="nav-item dropdown">
-                    <a href="/products/" class="nav-link">我们的产品</a>
+                    <button class="nav-btn">我们的产品</button>
                     <div class="dropdown-menu">
-                        <a href="/products/?product=1" class="dropdown-item">HaiTun Agent</a>
-                        <a href="/products/?product=2" class="dropdown-item">HaiBao Data</a>
+                        <a href="/products/?product=1" class="dropdown-card">HaiTun Agent</a>
+                        <a href="/products/?product=2" class="dropdown-card">HaiBao Data</a>
                     </div>
                 </li>
                 <li class="nav-item">
