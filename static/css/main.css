@@ -6,14 +6,13 @@
 }
 
 :root {
-    /* 全新天蓝色主题系列 */
-    --primary: #3b98e9;        /* 主天蓝色，标准天蓝 */
-    --primary-light: #74b9f3;  /* 浅天蓝，hover高亮 */
-    --primary-dark: #2276c2;   /* 深一点天蓝，hover加深 */
-    --primary-glow: rgba(59, 152, 233, 0.12); /* 淡天蓝柔光 */
+    --primary: #3b98e9;
+    --primary-light: #74b9f3;
+    --primary-dark: #2276c2;
+    --primary-glow: rgba(59, 152, 233, 0.12);
     --bg: #ffffff;
-    --bg-light: #f5faff;       /* 配套极浅天蓝背景，适配板块底色 */
-    --bg-dark: #102a48;        /* 页脚深蓝微调，和天蓝适配不突兀 */
+    --bg-light: #f5faff;
+    --bg-dark: #102a48;
     --text-primary: #0f172a;
     --text-secondary: #475569;
     --text-light: #64748b;
@@ -21,12 +20,15 @@
     --white: #ffffff;
     --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.06);
     --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
-    --shadow-lg: 0 20px 40px rgba(59, 152, 233, 0.12); /* 阴影柔光同步天蓝 */
+    --shadow-lg: 0 20px 40px rgba(59, 152, 233, 0.12);
     --radius-sm: 8px;
     --radius-md: 12px;
     --radius-lg: 20px;
     --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     --nav-height: 80px;
+    --brand-blue: #1a3b90;
+    --brand-blue-dark: #0f2866;
+    --font-cn: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", Roboto, sans-serif;
 }
 
 html {
@@ -34,12 +36,12 @@ html {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", Roboto, sans-serif;
+    font-family: var(--font-cn);
     color: var(--text-primary);
     background: var(--bg);
     line-height: 1.75;
     overflow-x: hidden;
-    font-size: 16px; /* 全局基础字号放大 */
+    font-size: 16px;
     font-weight: 400;
 }
 
@@ -49,7 +51,7 @@ body {
     padding: 0 32px;
 }
 
-/* 通用区块标题（放大加粗） */
+/* ==================== 通用区块标题 ==================== */
 .section-header {
     text-align: center;
     margin-bottom: 64px;
@@ -99,7 +101,7 @@ body {
     transform: translateY(0);
 }
 
-/* 按钮通用样式（放大） */
+/* ==================== 按钮通用样式 ==================== */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -114,17 +116,19 @@ body {
     transition: var(--transition);
     font-family: inherit;
 }
+
 .btn-primary {
-    background: #1a3b90;
+    background: var(--brand-blue);
     color: #ffffff;
     box-shadow: 0 4px 14px rgba(26, 59, 144, 0.25);
 }
 
 .btn-primary:hover {
-    background: #0f2866;
+    background: var(--brand-blue-dark);
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(26, 59, 144, 0.35);
 }
+
 .btn-outline {
     background: transparent;
     color: var(--primary);
@@ -147,7 +151,7 @@ body {
     border-color: white;
 }
 
-/* ==================== 导航栏（永久白底+大字加粗+logo放大） ==================== */
+/* ==================== 导航栏 ==================== */
 .site-header {
     position: fixed;
     top: 0;
@@ -155,11 +159,11 @@ body {
     right: 0;
     height: var(--nav-height);
     z-index: 1000;
-    transition: var(--transition);
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     box-shadow: var(--shadow-sm);
+    transition: var(--transition);
 }
 
 .site-header.scrolled {
@@ -174,6 +178,13 @@ body {
     height: 100%;
 }
 
+/* 头部左侧：Logo + Slogan 并排 */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
 .logo-link {
     display: flex;
     align-items: center;
@@ -181,47 +192,126 @@ body {
 }
 
 .logo-full {
-    height: 48px; /* logo放大 */
+    height: 48px;
     width: auto;
 }
 
+/* 头部 Slogan */
+.header-slogan-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.35;
+    pointer-events: none;
+    user-select: none;
+}
+
+.header-slogan-text span {
+    color: var(--brand-blue);
+    font-family: var(--font-cn);
+}
+
+.header-slogan-text span:first-child {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.header-slogan-text span:last-child {
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0.85;
+}
+
+/* 导航列表 */
 .nav-list {
     display: flex;
     list-style: none;
     gap: 48px;
+    align-items: center;
 }
 
 .nav-link {
-    color: var(--text-primary); /* 深黑色，永远清晰 */
+    color: var(--text-primary);
     text-decoration: none;
-    font-size: 17px; /* 菜单字体放大 */
-    font-weight: 600; /* 加粗 */
+    font-size: 16px;
+    font-weight: 600;
+    font-family: var(--font-cn);
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: var(--brand-blue);
+}
+
+/* 我们的产品：下拉按钮 */
+.dropdown {
     position: relative;
-    transition: var(--transition);
 }
 
-.nav-link::after {
-    content: '';
+.nav-product-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 8px;
+    background: #ffffff;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: var(--font-cn);
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.nav-product-btn:hover {
+    background: var(--brand-blue);
+    color: #ffffff;
+    border-color: var(--brand-blue);
+}
+
+/* 下拉菜单 */
+.dropdown-menu {
     position: absolute;
-    bottom: -6px;
+    top: calc(100% + 8px);
     left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary);
-    transition: width 0.3s ease;
-    border-radius: 1px;
+    min-width: 200px;
+    background: var(--brand-blue);
+    border-radius: 8px;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px);
+    transition: all 0.25s ease;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-.nav-link:hover,
-.nav-link.active {
-    color: var(--primary);
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
-.nav-link:hover::after,
-.nav-link.active::after {
-    width: 100%;
+.dropdown-item {
+    display: block;
+    text-align: center;
+    padding: 10px 16px;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: var(--font-cn);
+    text-decoration: none;
+    background: transparent;
+    transition: background 0.2s ease;
 }
 
+.dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+}
+
+/* 移动端菜单按钮 */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -244,10 +334,10 @@ body {
 }
 
 .site-main {
-    padding-top: var(--nav-height); /* 内容从导航下方开始，不重叠 */
+    padding-top: var(--nav-height);
 }
 
-/* ==================== 首页 Banner 轮播（铺满无空白+文字清晰） ==================== */
+/* ==================== 首页 Banner 轮播 ==================== */
 .banner-section {
     position: relative;
     width: 100%;
@@ -255,7 +345,6 @@ body {
     max-height: 80vh;
     min-height: 480px;
     overflow: hidden;
-    /* 超宽屏两侧渐变填充，和图片自然融合 */
     background: linear-gradient(90deg, #eef2ff 0%, #f8fafc 50%, #eef2ff 100%);
 }
 
@@ -279,38 +368,44 @@ body {
     transition: opacity 1s ease;
     display: flex;
     align-items: center;
-    /* 优化图片渲染清晰度 */
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
 }
+
 .banner-slide.active {
     opacity: 1;
 }
 
-/* 极淡遮罩，保证文字清晰，不压暗图片 */
 .banner-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.3) 60%, transparent 100%);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.3) 60%, transparent 100%);
 }
 
 .banner-content {
     position: relative;
     z-index: 2;
-    color: var(--text-primary); /* 深色文字，永远清晰 */
+    color: var(--text-primary);
     max-width: 720px;
 }
+
 .banner-tag {
     display: inline-block;
     padding: 10px 22px;
     background: rgba(26, 59, 144, 0.18);
-    color: #1a3b90;
+    color: var(--brand-blue);
     border-radius: 50px;
     font-size: 15px;
     font-weight: 700;
     margin-bottom: 24px;
     border: 1px solid rgba(26, 59, 144, 0.25);
 }
+
+.banner-title,
+.banner-subtitle {
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8), 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
 .banner-title {
     font-size: 56px;
     font-weight: 800;
@@ -328,6 +423,7 @@ body {
     line-height: 1.8;
     animation: fadeInUp 1s ease 0.4s both;
 }
+
 .banner-buttons {
     animation: fadeInUp 1s ease 0.6s both;
 }
@@ -400,7 +496,7 @@ body {
     width: 52px;
 }
 
-/* ==================== 企业文化（大字版+美观排版） ==================== */
+/* ==================== 企业文化 ==================== */
 .culture-section {
     padding: 120px 0;
     background: #ffffff;
@@ -478,20 +574,21 @@ body {
 }
 
 .culture-card h3 {
-    font-size: 26px; /* 标题放大 */
+    font-size: 26px;
     font-weight: 700;
     margin-bottom: 18px;
     color: var(--text-primary);
 }
+
 .culture-card p {
     font-size: 21px;
     font-weight: 700;
     line-height: 1.65;
     letter-spacing: 1px;
-    color: #1a3b90;
+    color: var(--brand-blue);
 }
 
-/* ==================== 发展历程时间轴（字体放大） ==================== */
+/* ==================== 发展历程时间轴 ==================== */
 .timeline-section {
     padding: 120px 0;
     background: var(--bg-light);
@@ -570,7 +667,7 @@ body {
 }
 
 .timeline-year {
-    font-size: 30px; /* 年份放大 */
+    font-size: 30px;
     font-weight: 700;
     color: var(--primary);
     margin-bottom: 8px;
@@ -585,52 +682,29 @@ body {
 
 .timeline-content p {
     color: var(--text-secondary);
-    font-size: 16px; /* 正文放大 */
+    font-size: 16px;
     line-height: 1.75;
 }
 
-/* ==================== 合作企业logo墙 ==================== */
+/* ==================== 合作企业 ==================== */
 .partners-section {
     padding: 120px 0;
     background: #ffffff;
 }
 
-.partners-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 32px;
-    max-width: 1100px;
+.partners-image-wrapper {
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.partner-item {
-    background: #ffffff;
-    border-radius: var(--radius-md);
-    padding: 40px 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 140px;
-    transition: var(--transition);
-    filter: none;
-    opacity: 1;
-    border: none;
-}
-
-.partner-item:hover {
-    filter: none;
-    opacity: 1;
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-md);
-    background: #ffffff;
-}
-
-.partner-item img {
-    max-width: 100%;
-    max-height: 88px;
+.partners-image {
+    width: 100%;
+    height: auto;
+    display: block;
     object-fit: contain;
 }
-/* ==================== 产品全屏滚动页（大图+整屏+大字） ==================== */
+
+/* ==================== 产品全屏滚动页 ==================== */
 .products-fullpage {
     height: calc(100vh - var(--nav-height));
     overflow: hidden;
@@ -769,8 +843,15 @@ body {
 }
 
 @keyframes glowPulse {
-    0%, 100% { opacity: 0.6; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.05); }
+    0%,
+    100% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
 }
 
 .product-img {
@@ -806,7 +887,7 @@ body {
     box-shadow: 0 0 0 4px var(--primary-glow);
 }
 
-/* ==================== 新闻动态页（大字） ==================== */
+/* ==================== 新闻动态页 ==================== */
 .news-page {
     padding: 100px 0 100px;
     min-height: calc(100vh - var(--nav-height));
@@ -888,7 +969,7 @@ body {
     line-height: 1.75;
 }
 
-/* ==================== 加入我们页（大字） ==================== */
+/* ==================== 加入我们页 ==================== */
 .join-page {
     padding: 100px 0 100px;
     min-height: calc(100vh - var(--nav-height));
@@ -996,6 +1077,26 @@ body {
     height: 6px;
     background: var(--primary);
     border-radius: 50%;
+}
+
+.apply-info {
+    margin-top: 20px;
+}
+
+.apply-tip {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+}
+
+.apply-email {
+    font-size: 16px;
+    color: var(--primary);
+    margin: 0;
+}
+
+.apply-email strong {
+    font-weight: 700;
 }
 
 /* ==================== 弹窗通用样式 ==================== */
@@ -1107,7 +1208,7 @@ body {
     background: var(--primary-glow);
 }
 
-/* ==================== 页脚（logo放大+文字清晰） ==================== */
+/* ==================== 页脚 ==================== */
 .site-footer {
     background: var(--bg-dark);
     color: rgba(255, 255, 255, 0.85);
@@ -1122,7 +1223,7 @@ body {
 }
 
 .footer-logo {
-    height: 42px; /* 页脚logo放大 */
+    height: 42px;
     margin-bottom: 18px;
     filter: brightness(0) invert(1);
 }
@@ -1131,6 +1232,30 @@ body {
     font-size: 15px;
     line-height: 1.8;
     opacity: 0.75;
+}
+
+/* 页脚 Slogan */
+.footer-slogan {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.45;
+    margin-bottom: 12px;
+}
+
+.footer-slogan span {
+    color: #ffffff;
+    font-family: var(--font-cn);
+}
+
+.footer-slogan span:first-child {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.footer-slogan span:last-child {
+    font-size: 13px;
+    font-weight: 400;
+    opacity: 0.85;
 }
 
 .footer-links h4 {
@@ -1171,6 +1296,7 @@ body {
     .banner-title {
         font-size: 38px;
     }
+
     .banner-subtitle {
         font-size: 16px;
     }
@@ -1184,13 +1310,16 @@ body {
     .timeline::before {
         left: 20px;
     }
+
     .timeline-item {
         justify-content: flex-start !important;
         padding-left: 50px;
     }
+
     .timeline-content {
         width: 100%;
     }
+
     .timeline-dot {
         left: 20px;
     }
@@ -1201,23 +1330,22 @@ body {
         gap: 40px;
         text-align: center;
     }
+
     .product-features {
         text-align: left;
         max-width: 400px;
         margin-left: auto;
         margin-right: auto;
     }
+
     .product-buttons {
         justify-content: center;
-    }
-
-    .partners-grid {
-        grid-template-columns: repeat(3, 1fr);
     }
 
     .nav-list {
         display: none;
     }
+
     .menu-toggle {
         display: flex;
     }
@@ -1236,15 +1364,19 @@ body {
         transition: right 0.4s ease;
         z-index: 999;
     }
+
     .mobile-menu.open {
         right: 0;
     }
+
     .mobile-nav-list {
         list-style: none;
     }
+
     .mobile-nav-list li {
         margin-bottom: 24px;
     }
+
     .mobile-nav-link {
         color: var(--text-primary);
         text-decoration: none;
@@ -1258,372 +1390,6 @@ body {
     }
 }
 
-@media (max-width: 640px) {
-    .container {
-        padding: 0 20px;
-    }
-    .banner-section {
-        min-height: 380px;
-    }
-    .banner-title {
-        font-size: 30px;
-    }
-    .section-title {
-        font-size: 26px;
-    }
-    .product-name {
-        font-size: 30px;
-    }
-    .partners-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .modal-content {
-        padding: 28px 20px;
-    }
-}
-/* ==================== 合作企业（单张整图自适应） ==================== */
-.partners-section {
-    padding: 120px 0;
-    background: #ffffff;
-}
-
-.partners-image-wrapper {
-    max-width: 1200px; /* 图片最大宽度，屏幕超过这个尺寸后图片不再放大 */
-    margin: 0 auto;
-}
-
-.partners-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    /* 保证图片完整显示，不裁切、不变形 */
-    object-fit: contain;
-}
-
-
-
-.apply-info {
-    margin-top: 20px;
-}
-
-.apply-tip {
-    font-size: 15px;
-    color: var(--text-secondary);
-    margin-bottom: 6px;
-}
-
-.apply-email {
-    font-size: 16px;
-    color: var(--primary);
-    margin: 0;
-}
-
-.apply-email strong {
-    font-weight: 700;
-}
-
-.banner-title,
-.banner-subtitle {
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8), 0 0 8px rgba(255, 255, 255, 0.6);
-}
-
-
-
-/* 顶部导航 Slogan：蓝紫色，和 Logo 同色 */
-.header-slogan {
-    color: #1a3b90;
-    font-size: 13px;
-    font-weight: 600;
-    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
-}
-
-/* 深色页脚里的 Slogan */
-.footer-slogan {
-    color: #ffffff;
-    font-size: 13px;
-    font-weight: 500;
-    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
-    margin-bottom: 0;
-}
-
-/* ========== 导航基础 ========== */
-.nav-list {
-    display: flex;
-    list-style: none;
-    gap: 48px;
-    align-items: center;
-}
-
-.nav-link {
-    color: #0f172a;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    transition: color 0.2s ease;
-}
-
-.nav-link:hover {
-    color: #1a3b90;
-}
-
-/* ========== 我们的产品：按钮式下拉 ========== */
-.dropdown {
-    position: relative;
-}
-
-.nav-btn {
-    border: none;
-    background: #f1f5f9;
-    color: #0f172a;
-    font-size: 16px;
-    font-weight: 600;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.2s ease;
-}
-
-.nav-btn:hover {
-    background: #e2e8f0;
-    color: #1a3b90;
-}
-
-.dropdown-menu {
-    position: absolute;
-    top: calc(100% + 12px);
-    left: 0;
-    min-width: 220px;
-    background: #ffffff;
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
-    border-radius: 12px;
-    padding: 12px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(8px);
-    transition: all 0.25s ease;
-    z-index: 999;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.dropdown-card {
-    display: block;
-    text-align: center;
-    padding: 12px 16px;
-    border-radius: 8px;
-    color: #1a3b90;
-    font-size: 15px;
-    font-weight: 600;
-    text-decoration: none;
-    background: rgba(26, 59, 144, 0.06);
-    transition: 0.2s ease;
-}
-
-.dropdown-card:hover {
-    background: #1a3b90;
-    color: #ffffff;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(26, 59, 144, 0.25);
-}
-
-/* ========== 移动端适配 ========== */
-@media (max-width: 768px) {
-    .logo-slogan {
-        display: none;
-    }
-
-    .nav-list {
-        gap: 24px;
-    }
-
-    .nav-btn {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-
-    .dropdown-menu {
-        left: auto;
-        right: 0;
-        min-width: 180px;
-    }
-}
-
-.site-header {
-    position: relative;
-    z-index: 1000;
-    background: #ffffff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-}
-
-.nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 80px;
-}
-
-/* ========== 页头 Logo 区域 ========== */
-.logo-link {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-.logo-full {
-    height: 46px;
-    width: auto;
-}
-
-/* ========== 页头 Slogan：艺术化但不硬不尖 ========== */
-.header-slogan-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.42;
-    margin-left: 12px;
-    pointer-events: none;
-    user-select: none;
-}
-.header-slogan-text span {
-    color: #1a3b90;
-    font-size: 13px;
-    font-weight: 600;
-    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
-    letter-spacing: 1px;
-    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8), 0 0 8px rgba(26, 59, 144, 0.15);
-}
-
-.header-slogan-text span:first-child {
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.header-slogan-text span:last-child {
-    font-size: 12px;
-    opacity: 0.85;
-}
-
-/* ========== 导航基础 ========== */
-.nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 80px;
-}
-
-.nav-list {
-    display: flex;
-    list-style: none;
-    gap: 48px;
-    align-items: center;
-}
-
-.nav-link {
-    color: #0f172a;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    transition: color 0.2s ease;
-}
-
-.nav-link:hover {
-    color: #1a3b90;
-}
-
-/* ========== 我们的产品：蓝底白字按钮 ========== */
-.dropdown {
-    position: relative;
-}
-
-.nav-btn {
-    display: inline-block;
-    padding: 10px 22px;
-    border-radius: 8px;
-    background: #1a3b90;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    transition: background 0.2s ease;
-    border: none;
-}
-
-.nav-btn:hover {
-    background: #0f2866;
-    color: #ffffff;
-}
-
-/* ========== 下拉弹窗：蓝底白字，无阴影 ========== */
-.dropdown-menu {
-    position: absolute;
-    top: calc(100% + 8px);
-    left: 0;
-    min-width: 200px;
-    background: #1a3b90;
-    border-radius: 8px;
-    padding: 10px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(6px);
-    transition: all 0.25s ease;
-    z-index: 999;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.dropdown-item {
-    display: block;
-    text-align: center;
-    padding: 10px 16px;
-    border-radius: 6px;
-    color: #ffffff;
-    font-size: 15px;
-    font-weight: 500;
-    text-decoration: none;
-    background: transparent;
-    transition: background 0.2s ease;
-}
-
-.dropdown-item:hover {
-    background: rgba(255, 255, 255, 0.12);
-    color: #ffffff;
-}
-
-/* ========== 页脚 Slogan：普通导航字体 ========== */
-.footer-slogan {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.45;
-    margin-bottom: 12px;
-}
-
-.footer-slogan span {
-    color: #ffffff;
-    font-size: 13px;
-    font-weight: 400;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Microsoft YaHei", sans-serif;
-    letter-spacing: 0.3px;
-}
-
-.footer-slogan span:first-child {
-    font-size: 14px;
-    font-weight: 500;
-}
-
-/* ========== 移动端适配 ========== */
 @media (max-width: 768px) {
     .header-slogan-text {
         display: none;
@@ -1633,14 +1399,40 @@ body {
         gap: 24px;
     }
 
-    .nav-btn {
+    .nav-product-btn {
         font-size: 14px;
-        padding: 8px 16px;
+        padding: 6px 14px;
     }
 
     .dropdown-menu {
         left: auto;
         right: 0;
         min-width: 180px;
+    }
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .banner-section {
+        min-height: 380px;
+    }
+
+    .banner-title {
+        font-size: 30px;
+    }
+
+    .section-title {
+        font-size: 26px;
+    }
+
+    .product-name {
+        font-size: 30px;
+    }
+
+    .modal-content {
+        padding: 28px 20px;
     }
 }

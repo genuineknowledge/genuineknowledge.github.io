@@ -1,20 +1,21 @@
 <header class="site-header" id="siteHeader">
     <div class="container nav-container">
-        <!-- Logo 是跳转按钮，旁边 Slogan 不是按钮 -->
-        <a href="/" class="logo-link">
-            <img src="{{ .Site.Params.logoFull }}" alt="{{ .Site.Params.brandName }}" class="logo-full">
-        </a>
-
-        <!-- 旁边 Slogan 不是链接，不能点击 -->
-        <div class="header-slogan-text">
-            <span>符号连接融合</span>
-            <span>大模型与智能体</span>
+        <!-- 左侧：Logo + Slogan -->
+        <div class="header-left">
+            <a href="/" class="logo-link">
+                <img src="{{ .Site.Params.logoFull }}" alt="{{ .Site.Params.brandName }}" class="logo-full">
+            </a>
+            <div class="header-slogan-text">
+                <span>符号连接融合</span>
+                <span>大模型与智能体</span>
+            </div>
         </div>
 
+        <!-- 右侧导航 -->
         <nav class="main-nav">
             <ul class="nav-list">
                 <li class="nav-item dropdown">
-                    <a href="https://www.genuineknowledge.cn/products/?product" class="nav-btn">我们的产品</a>
+                    <a href="https://www.genuineknowledge.cn/products/?product" class="nav-product-btn">我们的产品</a>
                     <div class="dropdown-menu">
                         <a href="/products/?product=1" class="dropdown-item">HaiTun Agent</a>
                         <a href="/products/?product=2" class="dropdown-item">HaiBao Data</a>
