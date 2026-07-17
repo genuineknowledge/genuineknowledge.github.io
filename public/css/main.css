@@ -1270,3 +1270,73 @@ body {
     padding: 140px 0 100px;
     background: var(--bg-light);
 }
+/* ========== Logo 旁 Slogan 样式 ========== */
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+.logo-slogan {
+    line-height: 1.45;
+    font-size: 13px;
+    font-weight: 500;
+}
+.header-slogan {
+    color: #1a3b90;
+}
+.footer-slogan {
+    color: #e6edff;
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+/* ========== 顶部「我们的产品」下拉菜单 ========== */
+.dropdown {
+    position: relative;
+}
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    padding: 12px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: all 0.25s ease;
+    z-index: 999;
+}
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.dropdown-item {
+    display: block;
+    padding: 10px 24px;
+    color: #111827;
+    font-size: 15px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.dropdown-item:hover {
+    background: rgba(26, 59, 144, 0.08);
+    color: #1a3b90;
+}
+
+/* ========== 移动端产品子菜单 ========== */
+.mobile-submenu {
+    padding-left: 16px;
+    margin-top: 8px;
+}
+.mobile-submenu-item {
+    display: block;
+    padding: 8px 0;
+    color: #475569;
+    font-size: 15px;
+    text-decoration: none;
+}

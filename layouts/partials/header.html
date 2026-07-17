@@ -2,17 +2,26 @@
     <div class="container nav-container">
         <a href="/" class="logo-link">
             <img src="{{ .Site.Params.logoFull }}" alt="{{ .Site.Params.brandName }}" class="logo-full">
+            <div class="logo-slogan header-slogan">
+                符号连接融合<br>大模型与智能体
+            </div>
         </a>
-        
+
         <nav class="main-nav">
             <ul class="nav-list">
-                {{ range .Site.Menus.main }}
-                <li class="nav-item">
-                    <a href="{{ .URL }}" class="nav-link {{ if $.IsMenuCurrent "main" . }}active{{ end }}">
-                        {{ .Name }}
-                    </a>
+                <li class="nav-item dropdown">
+                    <a href="/products/" class="nav-link">我们的产品</a>
+                    <div class="dropdown-menu">
+                        <a href="/products/?product=1" class="dropdown-item">HaiTun Agent</a>
+                        <a href="/products/?product=2" class="dropdown-item">HaiBao Data</a>
+                    </div>
                 </li>
-                {{ end }}
+                <li class="nav-item">
+                    <a href="/about/" class="nav-link">关于我们</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/join-us/" class="nav-link">加入我们</a>
+                </li>
             </ul>
         </nav>
 
@@ -23,12 +32,21 @@
         </button>
     </div>
 
-    <!-- 移动端侧边菜单 -->
     <div class="mobile-menu" id="mobileMenu">
         <ul class="mobile-nav-list">
-            {{ range .Site.Menus.main }}
-            <li><a href="{{ .URL }}" class="mobile-nav-link">{{ .Name }}</a></li>
-            {{ end }}
+            <li>
+                <a href="/products/" class="mobile-nav-link">我们的产品</a>
+                <div class="mobile-submenu">
+                    <a href="/products/?product=1" class="mobile-submenu-item">HaiTun Agent</a>
+                    <a href="/products/?product=2" class="mobile-submenu-item">HaiBao Data</a>
+                </div>
+            </li>
+            <li>
+                <a href="/about/" class="mobile-nav-link">关于我们</a>
+            </li>
+            <li>
+                <a href="/join-us/" class="mobile-nav-link">加入我们</a>
+            </li>
         </ul>
     </div>
 </header>

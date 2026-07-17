@@ -5,21 +5,19 @@ enableRobotsTXT = true
 
 [menu]
   [[menu.main]]
-    name = "关于我们"
-    url = "/"
-    weight = 1
-  [[menu.main]]
     name = "我们的产品"
     url = "/products/"
-    weight = 2
+    weight = 1
+
   [[menu.main]]
-    name = "新闻动态"
-    url = "/news/"
-    weight = 3
+    name = "关于我们"
+    url = "/"
+    weight = 2
+
   [[menu.main]]
     name = "加入我们"
     url = "/join-us/"
-    weight = 4
+    weight = 3
 
 [pagination]
   pagerSize = 10
@@ -28,13 +26,11 @@ enableRobotsTXT = true
   home = ["HTML"]
 
 [params]
-  # 原有品牌参数
   brandName = "真知智能"
   brandEn = "GENUINE KNOWLEDGE"
   primaryColor = "#1a3b90"
   siteDesc = "专注深度知识服务与AI技术创新，用知识创造真实价值"
   
-  # 模板核心参数
   companyName = "真知人工智能"
   slogan = "用知识创造真实价值"
   subSlogan = "专注深度知识服务与技术创新"
