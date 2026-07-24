@@ -1439,3 +1439,97 @@ body {
         padding: 28px 20px;
     }
 }
+/* ==================== 移动端适配（768px 及以下） ==================== */
+@media (max-width: 768px) {
+    :root {
+        --nav-height: 64px;
+    }
+
+    body {
+        font-size: 15px;
+    }
+
+    .container {
+        padding: 0 20px;
+    }
+
+    /* 区块标题适配 */
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    .section-en {
+        font-size: 13px;
+        letter-spacing: 3px;
+        margin-bottom: 8px;
+    }
+
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+
+    .section-desc {
+        font-size: 15px;
+        margin-bottom: 16px;
+    }
+
+    .section-divider {
+        width: 48px;
+        height: 3px;
+    }
+
+    .section-animate {
+        transform: translateY(24px);
+    }
+
+    /* 按钮适配 */
+    .btn {
+        padding: 12px 26px;
+        font-size: 15px;
+    }
+
+    /* 导航栏适配 */
+    .logo-full {
+        height: 36px;
+    }
+
+    .header-slogan-text {
+        display: none;
+    }
+
+    .nav-list {
+        gap: 16px;
+    }
+
+    .nav-link {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+}
+
+/* ==================== 小屏手机适配（480px 及以下） ==================== */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .btn {
+        padding: 11px 22px;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    .nav-list {
+        gap: 10px;
+    }
+
+    .nav-link {
+        padding: 6px 8px;
+        font-size: 13px;
+    }
+}
