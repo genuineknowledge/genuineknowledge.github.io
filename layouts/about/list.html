@@ -1,0 +1,43 @@
+{{ define "main" }}
+<main class="about-page">
+    <section class="about-hero section-animate">
+        <img src="{{ "images/logo-icon.png" | relURL }}" alt="真知人工智能" class="about-hero-icon">
+        <p class="eyebrow">GENUINE KNOWLEDGE AI</p>
+        <h1>连接符号与智能，构建可信赖的 AI Agent</h1>
+        <p class="about-lead">真知人工智能专注于人工智能基础能力与智能体产品研发，致力于让 AI 真正融入工作流程，为每一位用户提供稳定、可靠、可持续使用的智能能力。</p>
+    </section>
+
+    <section class="about-intro section-animate">
+        <div class="about-section-heading"><span>01</span><h2>我们是谁</h2></div>
+        <div class="about-intro-copy">
+            <p>真知人工智能是一家面向真实业务场景的人工智能公司。我们相信，智能不应停留在对话与演示之中，而应当能够理解目标、连接工具、记住上下文，并在复杂环境中持续完成有价值的工作。</p>
+            <p>围绕这一理念，我们主要开发 HaiTun Agent 与 HaiBao Data 两款产品：前者帮助企业构建能够规划、执行和自我迭代的智能体，后者让用户用自然语言理解数据、生成 SQL、获得清晰可用的业务洞察。</p>
+            <p>我们以符号连接融合大模型与智能体，让技术更贴近业务，让每一次使用都更准确、更高效、更值得信赖。</p>
+        </div>
+    </section>
+
+    <section class="about-principles section-animate">
+        <div class="about-section-heading"><span>02</span><h2>我们的方向</h2></div>
+        <div class="principles-grid">
+            <article><h3>真知使命</h3><p>让 AI 为用户按需赋能</p></article>
+            <article><h3>真知愿景</h3><p>符号与连接融合，引领 ASI<br><small>Artificial Super Intelligence</small></p></article>
+            <article><h3>真知目标</h3><p>做最强的 Agent，让智能真正服务于复杂工作</p></article>
+        </div>
+    </section>
+
+    <section class="about-values section-animate">
+        <div class="about-section-heading"><span>03</span><h2>我们的价值观</h2></div>
+        <div class="values-list">
+            {{ range slice "以用户为中心" "有创业精神" "有使命感" "有责任感" "实事求是" "可靠可信" }}<span>{{ . }}</span>{{ end }}
+        </div>
+    </section>
+
+    <section class="about-products section-animate">
+        <div class="about-section-heading"><span>04</span><h2>我们正在创造</h2></div>
+        <div class="about-product-grid">
+            <a class="about-product-card" href="{{ "/products/?product=1" | relURL }}"><img src="{{ "images/logo-icon.png" | relURL }}" alt=""><div><p class="product-kicker">AGENT PLATFORM</p><h3>HaiTun Agent</h3><p>融合可微符号技术与大模型能力，自主迭代适配企业复杂业务流程。</p></div><span>了解产品 →</span></a>
+            <a class="about-product-card" href="{{ "/products/?product=2" | relURL }}"><img src="{{ "images/logo-icon.png" | relURL }}" alt=""><div><p class="product-kicker">DATA INTELLIGENCE</p><h3>HaiBao Data</h3><p>用自然语言提问，让数据查询、分析与洞察变得简单直接。</p></div><span>了解产品 →</span></a>
+        </div>
+    </section>
+</main>
+{{ end }}
