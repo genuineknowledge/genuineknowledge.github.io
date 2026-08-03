@@ -42,5 +42,5 @@
 - Generated output: `public/` (build artifacts only)
 
 - [ ] Run `hugo --minify` from the repository root and confirm exit code 0.
-- [ ] Search generated `public/join-us/index.html` and `public/products/index.html` for the target join URL, absence of HaiBao Data's CTA, and presence of HaiTun Agent's CTA.
+- [ ] Search generated `public/products/index.html` for the target join URL, absence of HaiBao Data's CTA, and presence of HaiTun Agent's CTA.
 - [ ] Run `git diff --check` and inspect the final diff for unrelated changes.
