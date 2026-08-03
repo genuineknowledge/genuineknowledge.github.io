@@ -22,9 +22,11 @@
                     </li>
                     {{ end }}
                 </ul>
+                {{ if ne .index 2 }}
                 <div class="product-buttons">
                     <a href="{{ .btnLink }}" class="btn btn-primary product-detail-btn">{{ .btnText }}</a>
                 </div>
+                {{ end }}
             </div>
             <div class="product-image">
                 <div class="product-img-wrapper">

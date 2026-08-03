@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;600;700&display=swap');
+
 /* ==================== 全局变量与重置（大字清晰版） ==================== */
 * {
     margin: 0;
@@ -182,7 +184,7 @@ body {
 .header-left {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
 }
 
 .logo-link {
@@ -200,25 +202,29 @@ body {
 .header-slogan-text {
     display: flex;
     flex-direction: column;
-    line-height: 1.35;
+    gap: 1px;
+    line-height: 1.12;
     pointer-events: none;
     user-select: none;
 }
 
 .header-slogan-text span {
     color: var(--brand-blue);
-    font-family: "Yuanti SC", "STYuanti-SC", "华文圆体", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    font-family: "Noto Sans SC", "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", sans-serif;
 }
 
 .header-slogan-text span:first-child {
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
 }
 
 .header-slogan-text span:last-child {
-    font-size: 12px;
-    font-weight: 500;
-    opacity: 0.85;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #31559a;
+    opacity: 1;
 }
 
 /* 导航列表 */
@@ -1395,7 +1401,15 @@ body {
 
 @media (max-width: 768px) {
     .header-slogan-text {
-        display: none;
+        gap: 0;
+    }
+
+    .header-slogan-text span:first-child {
+        font-size: 11px;
+    }
+
+    .header-slogan-text span:last-child {
+        font-size: 9px;
     }
 
     .nav-list {
