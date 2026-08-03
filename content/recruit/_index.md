@@ -72,7 +72,7 @@
             <a href="https://www.genuineknowledge.cn">官网首页</a>
             <a href="https://www.genuineknowledge.cn/products/">我们的产品</a>
             <a href="https://www.genuineknowledge.cn/about/">关于我们</a>
-            <a href="https://www.genuineknowledge.cn/join-us/">加入我们</a>
+            <a href="https://www.genuineknowledge.cn/joinus/">加入我们</a>
         </div>
     </div>
     <div class="footer-bottom">
