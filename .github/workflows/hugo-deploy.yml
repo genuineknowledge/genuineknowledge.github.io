@@ -32,6 +32,8 @@ jobs:
           ref: main
           path: joinus-site
 
+      # /haitun/ 的 ICP 与公安备案号在 genuineknowledge/haitun 页脚。
+      # 合并本仓库 main 会重新构建，并发布到 www.genuineknowledge.cn/haitun/。
       - name: Checkout haitun website
         uses: actions/checkout@v4
         with:
